@@ -1,0 +1,54 @@
+#app {
+  max-width: 1280px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background-color: #191919;
+  font-family: 'Inter', sans-serif;
+}
+
+.todo-header{
+  width: 100vw;
+  height: 200px;
+  background-color: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container{
+  border: 1px solid white;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 60%;
+}
+
+.container-total-task{
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #4ea8de;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-total-task span{
+  padding: 3px 5px;
+  background-color: #333;
+  color: #d9d9d9;
+  border-radius: 99px;
+}
