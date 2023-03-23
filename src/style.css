@@ -1,9 +1,4 @@
-#app {
-  max-width: 1280px;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
-
 
 *{
   padding: 0;
@@ -47,7 +42,7 @@ body{
 }
 
 .container-total-task span{
-  padding: 3px 5px;
+  padding: 3px 10px;
   background-color: #333;
   color: #d9d9d9;
   border-radius: 99px;

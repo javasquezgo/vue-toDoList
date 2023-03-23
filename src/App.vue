@@ -1,5 +1,5 @@
 <script setup>
-import { computed, provide, reactive } from "vue";
+import { computed, provide, reactive, ref } from "vue";
 import ToDoInput from "./components/ToDoInput.vue";
 import Task from "./components/Task.vue";
 
@@ -21,6 +21,7 @@ const toDoList = reactive([
     status: true,
   },
 ]);
+provide("tasks", toDoList);
 
 const totalToDo = computed(() => {
   return toDoList.length;
@@ -31,16 +32,15 @@ const totalDoneTask = computed(() => {
     return todo.status === true;
   }).length;
 });
-
-provide("tasks", toDoList);
 </script>
 
 <template>
   <header class="todo-header">
     <img src="./assets/Logo.svg" alt="Logo ToDo" class="header-logo" />
-    <to-do-input />
+    <to-do-input class="header-input" />
   </header>
-  <div class="container">
+
+  <section class="container">
     <div class="container-total-task">
       <p>
         ToDo List Total: <span>{{ totalToDo }}</span>
@@ -50,8 +50,16 @@ provide("tasks", toDoList);
       </p>
     </div>
     <task></task>
-  </div>
+  </section>
 </template>
 
 <style scoped>
+.header-input {
+  position: absolute;
+  bottom: -12%;
+}
+
+section {
+  margin: 40px auto;
+}
 </style>
