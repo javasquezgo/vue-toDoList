@@ -3,6 +3,8 @@ import { computed, provide, reactive, ref } from "vue";
 import ToDoInput from "./components/ToDoInput.vue";
 import Task from "./components/Task.vue";
 
+//Variables
+
 const toDoList = reactive([
   {
     text: "Code .",
@@ -23,6 +25,13 @@ const toDoList = reactive([
 ]);
 provide("tasks", toDoList);
 
+//Methods
+
+const updateToDoList = (newTodo) => {
+  toDoList.push(newTodo);
+};
+
+//Computed
 const totalToDo = computed(() => {
   return toDoList.length;
 });
@@ -32,10 +41,6 @@ const totalDoneTask = computed(() => {
     return todo.status === true;
   }).length;
 });
-
-const updateToDoList = (newTodo) => {
-  toDoList.push(newTodo);
-};
 </script>
 
 <template>

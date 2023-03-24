@@ -3,6 +3,11 @@ import { inject } from "vue";
 import "remixicon/fonts/remixicon.css";
 
 const task = inject("tasks");
+
+const clicked = (value) => {
+  console.log("you clicked me " + value);
+  task.splice(value, 1);
+};
 </script>
 <template  >
   <ul class="task-list">
@@ -10,7 +15,7 @@ const task = inject("tasks");
       <div class="task-container">
         <i class="ri-checkbox-blank-circle-line"></i>
         <p>{{ todo.text }}</p>
-        <i class="ri-delete-bin-line"></i>
+        <i @click="clicked(i)" class="ri-delete-bin-line"></i>
       </div>
     </li>
   </ul>
