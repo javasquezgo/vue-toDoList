@@ -32,12 +32,16 @@ const totalDoneTask = computed(() => {
     return todo.status === true;
   }).length;
 });
+
+const updateToDoList = (newTodo) => {
+  toDoList.push(newTodo);
+};
 </script>
 
 <template>
   <header class="todo-header">
     <img src="./assets/Logo.svg" alt="Logo ToDo" class="header-logo" />
-    <to-do-input class="header-input" />
+    <to-do-input class="header-input" @addNewTodo="updateToDoList" />
   </header>
 
   <section class="container">

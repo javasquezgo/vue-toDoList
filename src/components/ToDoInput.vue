@@ -1,10 +1,27 @@
 <script setup>
 import { ref, defineEmits } from "vue";
 
-const newTodoData = ref("");
+let newTodoData = ref("");
 
-const btnClick = () => {
-  console.log("I´ve clicked " + newTodoData.value);
+//Definimos una variable emit para mandar a llamar
+//defineEmits que puede almacenar un array de
+//funciones que deseamos emitir
+//pero algo importante el valor que esta dentro del array o los elementos
+//son los que tienes que llamar en el padre o sea
+//addNewTodo va aqui, cuando envias en la funcion y en el padre con v-on
+const emit = defineEmits(["addNewTodo"]);
+
+//De ahi creamos una funcion que mande a llamar a la variable emit
+//en realidad puede ser cualquiera pero convención lo dejamos asi
+//de ahi acepta dos parametros: 1) el nombre del evento que definiste
+//la verdad se puede llamar como sea pero busca algo para entender que hace
+//2) el valor que quieras enviar al padre :v
+const emitFunction = () => {
+  emit("addNewTodo", {
+    text: newTodoData.value,
+    state: false,
+  });
+  newTodoData.value = "";
 };
 </script>
 
@@ -16,7 +33,8 @@ const btnClick = () => {
       class="input-todo"
       placeholder="Add a new task"
     />
-    <button class="send-button" @click="btnClick">
+    <!--Aqui solo mandamos a llamar -->
+    <button class="send-button" @click="emitFunction">
       Add Task <i class="ri-add-circle-fill"></i>
     </button>
   </div>
