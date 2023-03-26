@@ -71,7 +71,26 @@ const checkStatus = (value, index) => {
   color: green;
 }
 
+.todo-done:hover {
+  text-shadow: 0px 0px 20px green;
+}
+
 .todo-not-done {
   color: red;
+}
+
+.todo-not-done:hover {
+  text-shadow: 0px 0px 20px #e25858;
+}
+
+.ri-delete-bin-line {
+  color: #808080;
+}
+
+.ri-delete-bin-line:hover {
+  color: #e25858;
+  padding: 5px;
+  background-color: #333;
+  border-radius: 4px;
 }
 </style>

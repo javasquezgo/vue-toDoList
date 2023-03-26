@@ -62,4 +62,8 @@ const emitFunction = () => {
   border: 0;
   cursor: pointer;
 }
+
+.send-button:hover {
+  background-color: #4ea8de;
+}
 </style>
