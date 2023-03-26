@@ -5,24 +5,7 @@ import Task from "./components/Task.vue";
 
 //Variables
 
-const toDoList = reactive([
-  {
-    text: "Code .",
-    status: false,
-  },
-  {
-    text: "Read my books",
-    status: false,
-  },
-  {
-    text: "Work out",
-    status: true,
-  },
-  {
-    text: "Create the api",
-    status: true,
-  },
-]);
+const toDoList = reactive([]);
 provide("tasks", toDoList);
 
 //Methods
