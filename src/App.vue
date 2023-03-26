@@ -1,5 +1,5 @@
 <script setup>
-import { computed, provide, reactive, ref } from "vue";
+import { computed, provide, reactive } from "vue";
 import ToDoInput from "./components/ToDoInput.vue";
 import Task from "./components/Task.vue";
 
@@ -53,5 +53,12 @@ const totalDoneTask = computed(() => {
 
 section {
   margin: 40px auto;
+}
+
+@media (max-width: 544px) {
+  .header-input {
+    position: absolute;
+    bottom: -25%;
+  }
 }
 </style>

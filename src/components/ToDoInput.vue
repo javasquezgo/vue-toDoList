@@ -41,13 +41,17 @@ const emitFunction = () => {
 </template>
 
 <style scoped>
+.toDoInputDiv {
+  display: flex;
+}
 .input-todo {
   background-color: #262626;
   color: #f2f2f2;
   font-size: 1.8rem;
   border: 1px solid black;
   border-radius: 8px;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   height: 44px;
   padding: 0 12px;
 }
@@ -61,9 +65,21 @@ const emitFunction = () => {
   border-radius: 8px;
   border: 0;
   cursor: pointer;
+  width: 150px;
 }
 
 .send-button:hover {
   background-color: #4ea8de;
+}
+
+@media (max-width: 544px) {
+  .toDoInputDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .send-button {
+    margin: 20px 0 0;
+  }
 }
 </style>
