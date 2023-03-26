@@ -2,4 +2,4 @@
 
 Practica de lo visto en diferentes clases, me ha llevado tiempo.
 
-## El Mockup o diseño le pertenece a @suskosk su IG y Figma
+## El Mockup o diseño le pertenece a @suskosk su IG y Figma.
